@@ -1,0 +1,7 @@
+.home {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    max-width: 1280px;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 0 20px;
+}

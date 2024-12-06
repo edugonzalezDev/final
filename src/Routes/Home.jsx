@@ -1,5 +1,6 @@
 import Card from '../Components/Card';
 import { useDentistStates } from '../Context/Context';
+import '../Styles/Home.css';
 
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context

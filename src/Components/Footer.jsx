@@ -1,10 +1,13 @@
-import React from 'react'
+import '../Styles/Footer.css';
+import { useDentistStates } from '../Context/Context';
 
 const Footer = () => {
+  const { theme } = useDentistStates();
+  
   return (
-    <footer>
+    <footer className={`footer footer-${theme}`}>
         <p>Powered by</p>
-        <img src="./img/DH.png" alt='DH-logo' />
+        <img src="./images/DH.png" alt='DH-logo' />
     </footer>
   )
 }

@@ -1,0 +1,8 @@
+.main-dark {
+    background-color: var(--background-primary-color-dark-theme);
+    color: var(--text-color-dark-theme);
+}
+.main-light {
+    background-color: var(--background-primary-color-light-theme);
+    color: var(--text-color-light-theme);
+}
