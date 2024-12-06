@@ -7,7 +7,7 @@ const DentistStates = createContext();
 
 const initialState = {
     dentists: [],
-    favs: [],
+    favs: JSON.parse(localStorage.getItem("favs")) || [],
 };
 
 // eslint-disable-next-line react/prop-types
@@ -17,6 +17,10 @@ const Context = ({ children }) => {
 
   const url = "https://jsonplaceholder.typicode.com/users";
 
+  useEffect(() => {
+    localStorage.setItem("favs", JSON.stringify(state.favs));
+  }, [state.favs]);
+  
     useEffect(() => {
       axios(url)
         .then((res) => {

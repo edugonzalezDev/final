@@ -3,10 +3,12 @@ import "../Styles/Card.css";
 import { useDentistStates } from '../Context/Context';
 
 const Card = ({ name, username, id }) => {
-  const { theme, setTheme } = useDentistStates();
+  const { theme, dispatch } = useDentistStates();
   const imageUrl = "/images/doctor.jpg";
   const addFav = () => {
     // Aqui iria la logica para agregar la Card en el localStorage
+    // setFavs((prev) => [...prev, [ name, username, id ]]);   
+    dispatch({ type: "ADD_FAV", payload: { name, username, id } }); 
   };
 
   return (
