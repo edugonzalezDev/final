@@ -3,7 +3,7 @@ import "../Styles/Form.css";
 import { useDentistStates } from "../Context/Context";
 
 const Form = () => {
-  const [usuario, setUsuario] = useState({ nombre: "", email: "", consulta: "" });
+  const [usuario, setUsuario] = useState({ nombre: "", email: ""});
   const [formEnviado, setFormEnviado] = useState(false);
   const [error, setError] = useState(false);
   const { state } = useDentistStates();
@@ -15,10 +15,12 @@ const Form = () => {
     const regexNombre = /^[a-zA-ZÀ-ÿ\s]{3,40}$/;
     const regexConsulta = /^[a-zA-ZÀ-ÿ\s]{3,200}$/;
 
-    if (regexEmail.test(usuario.email) && regexNombre.test(usuario.nombre) && regexConsulta.test(usuario.consulta)) {
+    if (regexEmail.test(usuario.email) && regexNombre.test(usuario.nombre)) {
       setFormEnviado(true);
       setError(false);
     } else {
+      console.log(regexEmail.test(usuario.email),regexNombre.test(usuario.nombre), regexConsulta.test(usuario.consulta), usuario.consulta);
+      
       setError(true);
     }
   };
@@ -26,7 +28,7 @@ const Form = () => {
   return (
     <>
       {formEnviado ? (
-        <h2>Gracias por enviar tus datos</h2>
+        <h2>{`Gracias ${usuario.nombre}`}Gracias por enviar tus datos</h2>
       ) : (
         <>
           <h2>Quieres saber más?</h2>
@@ -61,7 +63,7 @@ const Form = () => {
             <button type="submit">Enviar</button>
             {error && (
               <p style={{ color: "red" }}>
-                Por favor, ingrese un nombre y email válidos y complete la consulta
+                Por favor, ingrese un nombre y email válidos
               </p>
             )}
           </form>

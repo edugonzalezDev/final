@@ -8,6 +8,8 @@ const Card = ({ name, username, id }) => {
 
   const addFav = () => {
     dispatch({ type: "ADD_FAV", payload: { name, username, id } });
+    console.log("Añadido a favoritos");
+    
   };
 
   return (
