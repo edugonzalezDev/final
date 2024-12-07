@@ -1,6 +1,6 @@
 
 import axios from "axios";
-import { createContext, useState, useEffect, useReducer, useContext } from "react";
+import { createContext, useEffect, useReducer, useContext } from "react";
 import { reducer } from "../Reducers/reducer";
 
 const DentistStates = createContext();
@@ -8,13 +8,11 @@ const DentistStates = createContext();
 const initialState = {
     dentists: [],
     favs: JSON.parse(localStorage.getItem("favs")) || [],
+    theme: "light",
 };
 
-// eslint-disable-next-line react/prop-types
 const Context = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [theme, setTheme] = useState("light");
-
   const url = "https://jsonplaceholder.typicode.com/users";
 
   useEffect(() => {
@@ -29,7 +27,7 @@ const Context = ({ children }) => {
     }, []);
 
     return (
-        <DentistStates.Provider value={{ state, dispatch, theme, setTheme }}>
+        <DentistStates.Provider value={{ state, dispatch }}>
             {children}
         </DentistStates.Provider>
         );

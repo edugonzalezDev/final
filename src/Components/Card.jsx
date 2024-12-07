@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
 import "../Styles/Card.css";
-import { useDentistStates } from '../Context/Context';
+import { useDentistStates } from "../Context/Context";
 
 const Card = ({ name, username, id }) => {
-  const { theme, dispatch } = useDentistStates();
+  const { state, dispatch } = useDentistStates();
   const imageUrl = "/images/doctor.jpg";
+
   const addFav = () => {
-    // Aqui iria la logica para agregar la Card en el localStorage
-    // setFavs((prev) => [...prev, [ name, username, id ]]);   
-    dispatch({ type: "ADD_FAV", payload: { name, username, id } }); 
+    dispatch({ type: "ADD_FAV", payload: { name, username, id } });
   };
 
   return (
-    <div className={`card card-${theme}`}>
+    <div className={`card card-${state.theme}`}>
       <img src={imageUrl} alt="Imagen de perfil" className="card-image" />
       <div className="card-content">
         <Link to={"/detail/" + id}>
@@ -21,7 +20,7 @@ const Card = ({ name, username, id }) => {
         <p className="card-description">{username}</p>
       </div>
       <button onClick={addFav} className="favButton">
-        Add fav
+        ⭐ 
       </button>
     </div>
   );

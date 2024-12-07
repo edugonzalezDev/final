@@ -1,25 +1,25 @@
-import Card from '../Components/Card';
-import { useDentistStates } from '../Context/Context';
-import '../Styles/Home.css';
-
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import Card from "../Components/Card";
+import { useDentistStates } from "../Context/Context";
+import "../Styles/Home.css";
 
 const Home = () => {
-  
-  const { state, theme } = useDentistStates();
+  const { state } = useDentistStates();
 
   return (
     <>
       <h1>Dentistas</h1>
-      <div className={`home ${theme}`}>
-        {
-        state.dentists.map((dentist) => (
-          <Card key={dentist.id} id={dentist.id} name={dentist.name} username={dentist.username} />
+      <div className={`home ${state.theme}`}>
+        {state.dentists.map((dentist) => (
+          <Card
+            key={dentist.id}
+            id={dentist.id}
+            name={dentist.name}
+            username={dentist.username}
+          />
         ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

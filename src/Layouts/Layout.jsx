@@ -1,15 +1,15 @@
 import { Outlet } from "react-router-dom"
 import Footer from "../Components/Footer"
-import Navbar from "../Components/Navbar"
+import Header from "../Components/Header"
 import { useDentistStates } from '../Context/Context';
 import '../Styles/Layout.css';
 
 const Layout = () => {
-  const { theme } = useDentistStates();
+  const { state } = useDentistStates();
 
   return (
-    <div className={`main main-${theme}`}>
-        <Navbar />
+    <div className={`main main-${state.theme}`}>
+        <Header />
         <Outlet />
         <Footer />
     </div>

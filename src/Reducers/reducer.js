@@ -4,6 +4,8 @@ export const reducer = (state, action) => {
       return { ...state, dentists: action.payload };
     case "ADD_FAV":
       return { ...state, favs: [...state.favs, action.payload] };
+    case "TOGGLE_THEME":
+      return { ...state, theme: action.payload };
     default:
       throw new Error("Acción no existente");
   }
