@@ -3,6 +3,7 @@
   border-radius: 8px;
   max-width: 400px;
   margin: 20px auto;
+  transition: all 0.5s;
 }
 
 .contact-form-dark {
@@ -22,7 +23,7 @@ label {
   margin-bottom: 8px;
 }
 
-input {
+input, textarea {
   width: 90%;
   padding: 10px;
   margin-bottom: 20px;

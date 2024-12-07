@@ -1,17 +1,19 @@
-.home {
+.favorites {
     display: grid;
     grid-template-columns: auto;
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
     padding: 0 20px;
 }
 @media screen and (min-width: 576px) {
-    .home {
+    .favorites {
         grid-template-columns: auto auto;
     }
+    
 }
 @media screen and (min-width: 768px) {
-    .home {
+    .favorites {
         grid-template-columns: auto auto auto;
     }
+    
 }

@@ -24,11 +24,11 @@ const Detail = () => {
 
   return (
     <>
-      <h1>Detail Dentist id </h1>
+      <h1>Detalle del dentista </h1>
       <h2>{dentist.name}</h2>
-      <p>{dentist.email}</p>
-      <p>{dentist.phone}</p>
-      <p>{dentist.website}</p>
+      <p>Email: {dentist.email}</p>
+      <p>Tenéfono: {dentist.phone}</p>
+      <p>Sitio web: {dentist.website}</p>
     </>
   )
 }

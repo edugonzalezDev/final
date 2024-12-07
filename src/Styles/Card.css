@@ -6,13 +6,21 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 20px;
-    transition: all 0.3s;
+    transition: all 0.5s;
     img {
-        max-width: 100px;
+        max-width: 200px;
         align-self: center;
     }
+    a:hover {
+            color: var(--primary-color-dark-theme);
+          }
 }
-
+.card-dark a {
+    color: var(--text-color-dark-theme);
+}
+.card-light a {
+    color: var(--text-color-light-theme);
+}
 .card-dark {
     background-color: var(--background-secondary-color-dark-theme);
     color: var(--text-color-dark-theme);

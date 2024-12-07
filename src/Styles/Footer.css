@@ -1,10 +1,11 @@
 .footer {
   display: flex;
-  flex-direction: column;
   gap: 10px;
+  justify-content: center;
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
+  border-top: 2px solid;
   border-image: linear-gradient(
       to right,
       var(--primary-color-dark-theme),
@@ -21,14 +22,13 @@
   img {
     height: 50px;
   }
+  transition: all 0.5s;
 }
 .footer-dark {
   background-color: var(--background-secondary-color-dark-theme);
-  border-top: 1px solid;
   color: var(--text-color-dark-theme);
 }
 .footer-light {
   background-color: var(--background-primary-color-light-theme);
-  border-top: 1px solid;
   color: var(--text-color-light-theme);
 }
